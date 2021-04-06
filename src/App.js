@@ -4,14 +4,27 @@ import Countries from "./component/Countries";
 import Header from "./component/Header";
 import countriesAll from "./data/countriesAll.json";
 import SearchBox from "./component/SearchBox";
+import CountryRegion from "./component/CountryRegion";
 
 const App = () => {
   const [searchCountry, setSearchCountry] = useState("");
-  const filteredCountry = countriesAll.filter(
-    (country) =>
-      country.name.toLowerCase().includes(searchCountry.toLowerCase()) ||
-      country.capital.toLowerCase().includes(searchCountry.toLowerCase())
-  );
+  const [regionName, setRegionName] = useState("All");
+
+  const filteredCountry = countriesAll.filter((country) => {
+    if (regionName === "All") {
+      return (
+        country.name.toLowerCase().includes(searchCountry.toLowerCase()) ||
+        country.capital.toLowerCase().includes(searchCountry.toLowerCase())
+      );
+    } else {
+      return (
+        country.region === regionName &&
+        (country.name.toLowerCase().includes(searchCountry.toLowerCase()) ||
+          country.capital.toLowerCase().includes(searchCountry.toLowerCase()))
+      );
+    }
+  });
+
   return (
     <div className="App">
       <Header />
@@ -19,6 +32,11 @@ const App = () => {
         searchCountry={searchCountry}
         setSearchCountry={setSearchCountry}
         countriesAll={countriesAll}
+      />
+      <CountryRegion
+        countriesAll={countriesAll}
+        regionName={regionName}
+        setRegionName={setRegionName}
       />
       <Countries countriesAll={filteredCountry} />
     </div>

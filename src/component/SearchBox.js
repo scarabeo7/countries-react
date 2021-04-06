@@ -7,6 +7,7 @@ const SearchBox = ({ searchCountry, setSearchCountry }) => {
   return (
     <div className="search-box">
       <input
+        className="left"
         type="text"
         placeholder="Search for a country"
         onChange={handleSearch}

@@ -1,13 +1,12 @@
 import React from "react";
 
-const Countries = ({countriesAll}) => {
-    
+const Countries = ({ countriesAll }) => {
   return (
-    <div className="container">     
+    <div className="container">
       {countriesAll.map((country, index) => (
         <div className="countries-info" key={index}>
           <img src={country.flag} alt="country flag" />
-          <h4>{country.name}</h4>
+          <h3>{country.name}</h3>
           <p>
             <strong>Population:</strong> {country.population}
           </p>
