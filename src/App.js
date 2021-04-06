@@ -1,12 +1,20 @@
-import './App.css';
+import React from "react";
+import "./App.css";
+import Countries from "./component/Countries";
+import Header from "./component/Header";
+import countriesAll from "./data/countriesAll.json";
+import SearchBox from "./component/SearchBox";
 
-function App() {
+
+const App = () => {
   return (
     <div className="App">
-      <h1>REST Countries API with color theme switcher</h1>
-      <p>This site is undergoing construction</p>
+      <Header />
+      <SearchBox countriesAll={countriesAll} />
+      <Countries countriesAll={countriesAll} />
     </div>
   );
-}
+};
 
 export default App;
+

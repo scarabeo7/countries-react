@@ -2,37 +2,37 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+img{
+  width: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.countries-info {
+  width: 20%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
+  align-items:flex-start;
+  justify-content:space-around;
+  margin-bottom: 1.5rem;
+  margin: 1rem auto;
+  border: 3px solid gray;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.countries-info img {
+  width: 100%;
+  margin-bottom: 1rem;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.countries-info p,
+.countries-info h4 {
+  text-align: justify;
+  align-items: flex-start;
+  margin-left: 2rem;
 }

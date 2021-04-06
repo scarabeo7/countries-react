@@ -3,7 +3,7 @@
 This excellent challenge was created by, and lives at [frontendmentor.io](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca).
 
 In *this* document we will simply break down that challenge into approachable levels, and give extra tips for getting started.
-
+  
 ## Challenge Overview
 
 Your *eventual* challenge is to make a React app integrate with the REST Countries API to fetch country data and display it like in the designs provided by [frontendmentor.io](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca).
