@@ -1,8 +1,7 @@
 import React from "react";
 
-
 const Countries = ({countriesAll}) => {
-    // const [searchCountry, setSearchCountry] = useState("");
+    
   return (
     <div className="container">     
       {countriesAll.map((country, index) => (
