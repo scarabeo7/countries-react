@@ -41,3 +41,20 @@ img {
   display: inline-block;
   font-size: 1.5rem;
 }
+@media only screen and (max-width: 994px) {
+  .countries-info {
+    width: 30%;
+  }
+  .search-box {
+    margin: 1rem auto;
+  }
+}
+
+@media only screen and (max-width: 778px) {
+  .countries-info {
+    width: 50%;
+  }
+  .search-box {
+    margin: 1rem auto;
+  }
+}
