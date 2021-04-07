@@ -10,12 +10,11 @@ const CountryRegion = ({
     !regionListArray.includes(item.region) && regionListArray.push(item.region);
   });
   const dropDownHandler = (e) => {
-    console.log(e.target.value);
     setRegionName(e.target.value);
   };
   return (
     <div className="search-box">
-      <label className="right">
+      <label>
         Choose a Region:
         <select onChange={dropDownHandler}>
           <option>All</option>

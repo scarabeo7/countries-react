@@ -1,44 +1,35 @@
 import React, { useState } from "react";
 import "./App.css";
-import Countries from "./component/Countries";
+import CountriesListView from "./component/CountriesListView";
+import CountryView from "./component/CountryView";
 import Header from "./component/Header";
-import countriesAll from "./data/countriesAll.json";
-import SearchBox from "./component/SearchBox";
-import CountryRegion from "./component/CountryRegion";
 
 const App = () => {
-  const [searchCountry, setSearchCountry] = useState("");
-  const [regionName, setRegionName] = useState("All");
+  const [view, setView] = useState("list");
+  const [countryId, setCountryId] = useState("");
 
-  const filteredCountry = countriesAll.filter((country) => {
-    if (regionName === "All") {
-      return (
-        country.name.toLowerCase().includes(searchCountry.toLowerCase()) ||
-        country.capital.toLowerCase().includes(searchCountry.toLowerCase())
-      );
-    } else {
-      return (
-        country.region === regionName &&
-        (country.name.toLowerCase().includes(searchCountry.toLowerCase()) ||
-          country.capital.toLowerCase().includes(searchCountry.toLowerCase()))
-      );
-    }
-  });
+  const setCountryHandler = (countryId) => {
+    setView("oneCountry");
+    setCountryId(countryId);
+  };
+
+  const handleBackButton = () => {
+    setView("list");
+  };
 
   return (
     <div className="App">
       <Header />
-      <SearchBox
-        searchCountry={searchCountry}
-        setSearchCountry={setSearchCountry}
-        countriesAll={countriesAll}
-      />
-      <CountryRegion
-        countriesAll={countriesAll}
-        regionName={regionName}
-        setRegionName={setRegionName}
-      />
-      <Countries countriesAll={filteredCountry} />
+      
+      {view === "list" ? (
+        <CountriesListView setCountryHandler={setCountryHandler} />
+      ) : (
+        <CountryView
+          countryId={countryId}
+          handleBackButton={handleBackButton}
+          setCountryHandler={setCountryHandler}
+        />
+      )}
     </div>
   );
 };
