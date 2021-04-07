@@ -19,7 +19,6 @@ img {
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: space-around;
-  margin-bottom: 1.5rem;
   margin: 1rem auto;
   border: 3px solid gray;
   border-radius: 6px;
@@ -37,9 +36,46 @@ img {
   margin-left: 2rem;
 }
 
+.country-view {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.back-btn {
+  width: 10%;
+}
+
+.country-card {
+  width: 100%;
+  margin: 1.5rem auto;
+  display: flex;
+  justify-content: space-between;
+}
+.flag {
+  width: 40%;
+}
+
+.flag img {
+  width: 100%;
+  margin-top: 3.5rem;
+  border: 10px solid grey;
+  border-radius: 1.5rem;
+}
+
+.detail {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 .search-box {
   display: inline-block;
   font-size: 1.5rem;
+  text-align: center;
 }
 @media only screen and (max-width: 994px) {
   .countries-info {
