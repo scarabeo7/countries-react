@@ -61,7 +61,7 @@ const CountryView = ({ countryId, handleBackButton, setCountryHandler }) => {
                 className="btn btn-dark m-2"
                 key={index}
               >
-                {item}
+                {countriesAll.find((country) => country.alpha3Code === item).name}
               </button>
             ))}
           </p>
