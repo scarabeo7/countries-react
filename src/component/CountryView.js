@@ -57,7 +57,7 @@ const CountryView = ({ countryId, handleBackButton, setCountryHandler }) => {
             <strong>Border Countries:</strong>
             {country.borders.map((item, index) => (
               <button
-                onClick={() => setCountryHandler(countryId)}
+                onClick={() => setCountryHandler(item)}
                 className="btn btn-dark m-2"
                 key={index}
               >
